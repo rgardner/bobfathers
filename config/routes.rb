@@ -1,4 +1,7 @@
 Bobfathers::Application.routes.draw do
+
+  match '/blog',     to: 'static_pages#blog',     via: 'get'
+  match '/feedback', to: 'static_pages#feedback', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
