@@ -1,0 +1,15 @@
+<% provide(:title, "Ideas") %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      Welcome Site + Description
+    </section>
+    <section>
+      <%= render 'idea_form' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h1>Ideas Suggested by the Bobfathers</h1>
+    <%= render 'ideas_feed' %>
+  </div>
+</div>

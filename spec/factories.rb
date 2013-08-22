@@ -9,4 +9,10 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :idea do
+    sequence(:title) { |n| "Title #{n}"}
+    description "example description"
+    suggested_by "anonymous"
+  end
 end

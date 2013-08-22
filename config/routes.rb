@@ -1,7 +1,8 @@
 Bobfathers::Application.routes.draw do
+  resources :ideas,    only: [:index, :new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
-  root  'static_pages#blog'
+  root  'ideas#index'
   match '/signin',   to: 'sessions#new',          via: 'get'
   match '/signout',  to: 'sessions#destroy',      via: 'delete'
   match '/blog',     to: 'static_pages#blog',     via: 'get'

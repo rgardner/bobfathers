@@ -1,0 +1,6 @@
+<% if @ideas_feed_items.any? %>
+  <ol class="ideas">
+    <%= render partial: 'idea', collection: @ideas_feed_items %>
+  </ol>
+  <%= will_paginate @ideas_feed_items %>
+<% end %>
