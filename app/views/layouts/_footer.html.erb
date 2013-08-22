@@ -1,8 +1,14 @@
 <footer class="footer">
-  <small>Made in NYC by Bob Gardner (2013)</small>
+  <small>
+    Made in NYC by
+    <%= link_to "Bob Gardner", "https://www.facebook.com/BobHGardner" %>
+    (2013)
+  </small>
   <nav>
     <ul>
-      <li>Sign in</li>
+      <% unless signed_in? %>
+        <li><%= link_to "Sign in", signin_path %></li>
+      <% end %>
     </ul>
   </nav>
 </footer>
