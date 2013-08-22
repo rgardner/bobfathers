@@ -1,5 +1,10 @@
 Bobfathers::Application.routes.draw do
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
+  root  'static_pages#blog'
+  match '/signin',   to: 'sessions#new',          via: 'get'
+  match '/signout',  to: 'sessions#destroy',      via: 'delete'
   match '/blog',     to: 'static_pages#blog',     via: 'get'
   match '/feedback', to: 'static_pages#feedback', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
