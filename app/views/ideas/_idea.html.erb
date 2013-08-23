@@ -1,7 +1,8 @@
 <li id="<%= idea.id %>">
-  <span class="idea_title"><%= idea.title %></span>
+  <span class="title"><%= idea.title %></span>
   <span class="description"><%= wrap(idea.description) %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(idea.created_at) %> ago.
+    Suggested <%= time_ago_in_words(idea.created_at) %> ago
+    by <%= idea.suggested_by %>
   </span>
 </li>
