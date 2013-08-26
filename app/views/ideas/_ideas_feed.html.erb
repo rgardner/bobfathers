@@ -1,4 +1,19 @@
 <% if @ideas_feed_items.any? %>
+  <ul class="nav nav-pills">
+    <li class="active"><a tabindex="-1" href="#">Hot</a></li>
+    <li><a tabindex="-1" href="#">New</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Status
+          <b class="caret"></b>
+        </a>
+      <ul class="dropdown-menu">
+        <li><a tabindex="-1" href="#">Approved</a></li>
+        <li><a tabindex="-1" href="#">Pending</a></li>
+        <li><a tabindex="-1" href="#">Denied</a></li>
+      </ul>
+    </li>
+  </ul>
   <ol class="ideas">
     <%= render partial: 'idea', collection: @ideas_feed_items %>
   </ol>
