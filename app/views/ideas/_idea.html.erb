@@ -5,4 +5,8 @@
     Suggested <%= time_ago_in_words(idea.created_at) %> ago
     by <%= idea.suggested_by %>
   </span>
+  <% if signed_in? && current_user.admin? %>
+    <%= link_to "delete", idea, method: :delete,
+                                data: { confirm: "You sure?" } %>
+  <% end %>
 </li>

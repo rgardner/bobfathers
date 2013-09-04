@@ -1,5 +1,5 @@
 Bobfathers::Application.routes.draw do
-  resources :ideas,    only: [:index, :new, :create]
+  resources :ideas,    only: [:index, :new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
   root  'ideas#index'
