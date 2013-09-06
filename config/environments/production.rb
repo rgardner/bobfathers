@@ -73,8 +73,8 @@ Bobfathers::Application.configure do
     address:        'smtp.gmail.com',
     port:           587,
     domain:         'gmail.com',
-    user_name:      APP_CONFIG['mail_delivery_email'],
-    password:       APP_CONFIG['mail_delivery_password'],
+    user_name:      ENV['MAILER_EMAIL'],
+    password:       ENV['MAILER_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
