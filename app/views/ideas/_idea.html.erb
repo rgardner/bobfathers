@@ -6,7 +6,25 @@
     by <%= idea.suggested_by %>
   </span>
   <% if signed_in? && current_user.admin? %>
-    <%= link_to "delete", idea, method: :delete,
-                                data: { confirm: "You sure?" } %>
+    <div class="btn-group">
+      <div class="btn-group">
+        <button class="btn btn-warning">Edit</button>
+        <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">Edit Status</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Approved</a></li>
+              <li><a href="#">Pending</a></li>
+              <li><a href="#">Denied</a></li>
+            </ul>
+          </li>
+          <li><%= link_to "Delete", idea, method: :delete,
+                                data: { confirm: "You sure?" } %></li>
+        </ul>
+      </div>
+    </div>
   <% end %>
 </li>
