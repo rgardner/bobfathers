@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  before_action :signed_in_user, only: [:edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
   def index
     @idea = Idea.new
@@ -13,6 +14,20 @@ class IdeasController < ApplicationController
     else
       @ideas_feed_items = Idea.paginate(page: params[:page])
       render 'index' 
+    end
+  end
+
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
+  def update
+    @idea = Idea.find(params[:id])
+    if @idea.update_attributes(idea_params)
+      flash[:success] = "Idea updated"
+      redirect_to root_url
+    else
+      render 'edit'
     end
   end
 
