@@ -64,6 +64,20 @@ Bobfathers::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  
+  # Set deliver method to :smtp, :sendmail, or :test
+  config.action_mailer.delivery_method = :smtp
+
+  # These options are only needed if you choose smtp delivery
+  config.action_mailer.smtp_settings = {
+    address:        'smtp.gmail.com',
+    port:           587,
+    domain:         'gmail.com',
+    user_name:      APP_CONFIG['mail_delivery_email'],
+    password:       APP_CONFIG['mail_delivery_password'],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
