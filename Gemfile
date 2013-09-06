@@ -8,6 +8,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'pg', '0.15.1'
+gem "active_attr", "0.8.2"
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
@@ -19,7 +20,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'selenium-webdriver', '2.0.0'
+  gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
   gem 'database_cleaner', github: 'bmabey/database_cleaner'

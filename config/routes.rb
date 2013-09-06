@@ -1,12 +1,13 @@
 Bobfathers::Application.routes.draw do
   resources :ideas
   resources :sessions, only: [:new, :create, :destroy]
+  resources :messages, only: [:new, :create]
 
   root  'ideas#index'
   match '/signin',   to: 'sessions#new',          via: 'get'
   match '/signout',  to: 'sessions#destroy',      via: 'delete'
   match '/blog',     to: 'static_pages#blog',     via: 'get'
-  match '/feedback', to: 'static_pages#feedback', via: 'get'
+  match '/feedback', to: 'messages#new',          via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -16,12 +16,4 @@ describe "Static Pages" do
 
     it_should_behave_like "all static pages"
   end
-
-  describe "Feedback page" do
-    before { visit feedback_path }
-    let(:page_title) { 'Feedback' }
-    let(:heading)    { 'Feedback' }
-
-    it_should_behave_like "all static pages"
-  end
 end
