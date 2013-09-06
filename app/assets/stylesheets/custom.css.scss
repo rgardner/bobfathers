@@ -198,6 +198,19 @@ aside {
 
 /* blog */
 
+#blog_links {
+    section {
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        ul {
+            list-style-type: none;
+        }
+    }
+}
+
 .signature {
     font-style: italic;
     font-size: 1.2em;
