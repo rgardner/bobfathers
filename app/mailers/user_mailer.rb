@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default to: User.find_by(admin: true).email,
+  default to: 'rhg259@nyu.edu',
           from: ENV['MAILER_EMAIL']
 
   def feedback_email(message)
