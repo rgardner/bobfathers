@@ -8,10 +8,6 @@
   <p>
     <%= @message.content %>
   </p>
-  <h2>Contact Info</h2>
-  <p>
-    <%= @message.name %>
-    <%= @message.email %>
-  </p>
+  <%= link_to @message.name, "mailto:#{@message.email}" %>
 </body>
 </html>

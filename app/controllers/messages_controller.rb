@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     if @message.valid?
       UserMailer.feedback_email(@message).deliver
-      redirect_to root_url, notice: "Message Sent! Thanks for the feedback."
+      flash[:success] = "Message sent! Thanks for the feedback."
+      redirect_to root_url
     else
       render 'new'
     end
