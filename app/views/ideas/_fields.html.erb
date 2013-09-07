@@ -7,3 +7,6 @@
 
 <%= f.label :suggested_by %>
 <%= f.text_field :suggested_by %>
+
+<%= f.label :status %>
+<%= f.select :status, Idea::STATUSES  %>

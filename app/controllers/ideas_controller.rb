@@ -43,7 +43,7 @@ class IdeasController < ApplicationController
   private
 
     def idea_params
-      params.require(:idea).permit(:title, :description, :suggested_by)
+      params.require(:idea).permit(:title, :description, :suggested_by, :status)
     end
 
     def sort_column
