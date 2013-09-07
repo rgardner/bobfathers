@@ -3,6 +3,9 @@ class IdeasController < ApplicationController
   helper_method :sort_column, :sort_direction
   def index
     @idea = Idea.new
+    if signed_in?
+      @idea.suggested_by = current_user.email
+    end
     @ideas_feed_items = Idea.order(sort_column + " " + sort_direction).page(params[:page])
   end
 
