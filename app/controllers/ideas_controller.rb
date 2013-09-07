@@ -6,13 +6,16 @@ class IdeasController < ApplicationController
     if signed_in?
       @idea.suggested_by = current_user.email
     end
-    @ideas_feed_items = Idea.order(sort_column + " " + sort_direction).page(params[:page])
+    @ideas_feed_items = Idea.where("verified = ?", true).order(sort_column +
+                                   " " + sort_direction).page(params[:page])
   end
 
   def create
     @idea = Idea.new(idea_params)
     if @idea.save
-      flash[:success] = "Thanks for the idea!"
+      flash[:success] = "Thanks for the idea! Email sent with verification " +
+                        "instructions."
+      @idea.send_verification_token
       redirect_to root_url
     else
       @ideas_feed_items = Idea.paginate(page: params[:page])

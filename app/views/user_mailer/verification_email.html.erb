@@ -1,0 +1,16 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+</head>
+<body>
+  <h1>Please verify your idea</h1>
+  <h2><%= @idea.title %></h2>
+  <p>
+    <%= @idea.description %>
+  </p>
+  To confirm this idea and modify the title/description, click the URL below.
+  <br><br>
+  <%= edit_idea_verification_url(@idea.verification_token) %>
+</body>
+</html>

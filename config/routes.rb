@@ -1,7 +1,8 @@
 Bobfathers::Application.routes.draw do
   resources :ideas
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :messages, only: [:new, :create]
+  resources :idea_verifications, only: [:edit, :update]
+  resources :sessions,           only: [:new, :create, :destroy]
+  resources :messages,           only: [:new, :create]
 
   root  'ideas#index'
   match '/signin',   to: 'sessions#new',          via: 'get'

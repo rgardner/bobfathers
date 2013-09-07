@@ -9,9 +9,19 @@ class Idea < ActiveRecord::Base
 
   STATUSES = { denied: "DENIED", pending: "PENDING", approved: "APPROVED" }
 
+  def send_verification_token
+    generate_token(:verification_token)
+    save!
+    UserMailer.verification_email(self).deliver
+  end
+
   private
 
     def create_status
       self.status = STATUSES[:pending]
+    end
+
+    def generate_token(column)
+      self[column] = SecureRandom.urlsafe_base64
     end
 end

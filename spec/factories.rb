@@ -14,5 +14,6 @@ FactoryGirl.define do
     sequence(:title) { |n| "Title #{n}"}
     description "example description"
     suggested_by "abc123@nyu.edu"
+    verified true
   end
 end

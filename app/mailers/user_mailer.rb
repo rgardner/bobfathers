@@ -1,9 +1,13 @@
 class UserMailer < ActionMailer::Base
-  default to: 'rhg259@nyu.edu',
-          from: ENV['MAILER_EMAIL']
+  default from: ENV['MAILER_EMAIL']
 
   def feedback_email(message)
     @message = message
-    mail(subject: 'Bobfathers Feedback')
+    mail(to: 'rhg259@nyu.edu', subject: 'Bobfathers Feedback')
+  end
+
+  def verification_email(idea)
+    @idea = idea
+    mail(to: @idea.suggested_by, subject: 'Bobfathers Idea Verification')
   end
 end

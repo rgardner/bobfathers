@@ -1,0 +1,11 @@
+Please verify your idea
+====================================
+<%= @idea.title %>
+------------------------------------
+
+<%= @idea.description %>
+
+====================================
+To confirm this idea and modify the title/description, click the URL below.
+
+<%= edit_idea_verification_url(@idea.verification_token) %>
