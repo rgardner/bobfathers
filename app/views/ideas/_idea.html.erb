@@ -1,4 +1,4 @@
-<li id="<%= idea.id %>">
+<li id="<%= idea.id %>" class="<%= idea.status.downcase %>">
   <span class="title"><%= idea.title %></span>
   <span class="description"><%= wrap(idea.description) %></span>
   <span class="timestamp">
