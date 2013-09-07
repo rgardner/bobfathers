@@ -54,7 +54,7 @@ describe "Idea Pages" do
       before do
         fill_in "idea_title",        with: "Example Idea"
         fill_in "idea_description",  with: "Example Description"
-        fill_in "idea_suggested_by", with: "Example Name"
+        fill_in "idea_suggested_by", with: "abc123@nyu.edu"
       end
 
       it "should create an idea" do

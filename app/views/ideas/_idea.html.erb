@@ -3,7 +3,7 @@
   <span class="description"><%= wrap(idea.description) %></span>
   <span class="timestamp">
     Suggested <%= time_ago_in_words(idea.created_at) %> ago
-    by <%= idea.suggested_by %>
+    by <%= idea.suggested_by[0..5] %>
   </span>
   <% if signed_in? && current_user.admin? %>
     <div class="btn-group">

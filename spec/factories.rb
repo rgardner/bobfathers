@@ -13,6 +13,6 @@ FactoryGirl.define do
   factory :idea do
     sequence(:title) { |n| "Title #{n}"}
     description "example description"
-    suggested_by "anonymous"
+    suggested_by "abc123@nyu.edu"
   end
 end
