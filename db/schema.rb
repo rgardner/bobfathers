@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909051849) do
+ActiveRecord::Schema.define(version: 20130909054346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20130909051849) do
     t.boolean  "verified",           default: false
     t.string   "verification_token"
     t.string   "event_url"
+    t.string   "event_info"
   end
 
   add_index "ideas", ["verification_token"], name: "index_ideas_on_verification_token", using: :btree
