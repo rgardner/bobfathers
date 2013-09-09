@@ -182,6 +182,9 @@ aside {
     li {
         padding: 10px 0;
         border-top: 1px solid $grayLighter;
+        a {
+            font-size: 1.4em;
+        }
         &:last-child {
             border-bottom: 1px solid $grayLighter;
         }

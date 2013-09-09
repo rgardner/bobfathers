@@ -1,6 +1,9 @@
 <li id="<%= idea.id %>" class="<%= idea.status.downcase %>">
   <span class="title"><%= idea.title %></span>
   <span class="description"><%= wrap(idea.description) %></span>
+  <% if idea.event_url %>
+    <%= link_to "Doodle", idea.event_url %>
+  <% end %>
   <span class="timestamp">
     Suggested <%= time_ago_in_words(idea.created_at) %> ago
     by <%= idea.suggested_by[0..5] %>
