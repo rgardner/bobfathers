@@ -9,6 +9,8 @@ class Idea < ActiveRecord::Base
 
   STATUSES = { denied: "DENIED", pending: "PENDING", approved: "APPROVED" }
 
+  self.per_page = 10
+
   def send_verification_token
     generate_token(:verification_token)
     save!

@@ -3,6 +3,7 @@
     <li><%= sortable "created_at", "New" %></li>
     <li><%= sortable "updated_at", "Hot" %></li>
   </ul>
+  <%= will_paginate @ideas_feed_items %>
   <ol class="ideas">
     <%= render partial: 'idea', collection: @ideas_feed_items %>
   </ol>
