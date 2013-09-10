@@ -79,7 +79,7 @@ Bobfathers::Application.configure do
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { host: "bobfathers.com",
+  config.action_mailer.default_url_options = { host: "www.bobfathers.com",
                                                protocol: "https" }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
