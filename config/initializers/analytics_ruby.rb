@@ -1,0 +1,1 @@
+Analytics.init(secret: '8qlzmclevubkb52b6uot')
