@@ -1,6 +1,8 @@
 class Idea < ActiveRecord::Base
   before_save { suggested_by.downcase! }
   before_create :create_status
+  before_create { self.event_url  = "" }
+  before_create { self.event_info = "" }
   VALID_EMAIL_REGEX = /\A.{3}\d{3}@nyu.edu\z/i
   validates :title, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { minimum: 10 }

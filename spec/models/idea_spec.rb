@@ -14,6 +14,9 @@ describe Idea do
   it { should respond_to(:suggested_by) }
   it { should respond_to(:admin_notes) }
   it { should respond_to(:status) }
+  it { should respond_to(:verified) }
+  it { should respond_to(:event_url) }
+  it { should respond_to(:event_info) }
 
   it { should be_valid }
 
@@ -76,5 +79,20 @@ describe Idea do
   describe "status" do
     before { @idea.save }
     its(:status) { should eq Idea::STATUSES[:pending] }
+  end
+
+  describe "verified" do
+    before { @idea.save }
+    its(:verified) { should eq false }
+  end
+
+  describe "event_url" do
+    before { @idea.save }
+    its(:event_url) { should eq "" }
+  end
+
+  describe "event_info" do
+    before { @idea.save }
+    its(:event_info) { should eq "" }
   end
 end
